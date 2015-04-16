@@ -8,15 +8,21 @@ var PropTypes = React.PropTypes;
 module.exports = React.createClass({
   displayName: 'Audio',
   propTypes: {
-    play: PropTypes.bool,
+    play: PropTypes.bool.isRequired,
+    src: PropTypes.string.isRequired,
     onPause: PropTypes.func,
     onPlay: PropTypes.func,
     onEnd: PropTypes.func,
-    src: PropTypes.string,
     onTimeUpdate: PropTypes.func
   },
   getDefaultProps() {
-    return { play: false, onPause: function() {}, onPlay: function() {} };
+    return {
+      play: false,
+      onPause: function() {},
+      onPlay: function() {},
+      onEnd: function() {},
+      onTimeUpdate: function() {}
+    };
   },
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.play !== this.props.play;
