@@ -1,0 +1,20 @@
+{
+  "name": "react-audio",
+  "version": "0.0.0",
+  "description": "A simple React wrapper around html5 audio element.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./npm-build.sh",
+    "prepublish": "npm run build"
+  },
+  "author": "vegetableman <vegetablebot@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "attach-dom-events": "^1.0.0"
+  },
+  "devDependencies": {
+    "glob": "^5.0.5",
+    "react-tools": "^0.13.1"
+  }
+}
