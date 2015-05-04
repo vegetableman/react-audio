@@ -13,7 +13,8 @@ module.exports = React.createClass({
     onPause: PropTypes.func,
     onPlay: PropTypes.func,
     onEnd: PropTypes.func,
-    onTimeUpdate: PropTypes.func
+    onTimeUpdate: PropTypes.func,
+    onLoadedMetaData: PropTypes.func
   },
   getDefaultProps() {
     return {
@@ -21,7 +22,8 @@ module.exports = React.createClass({
       onPause: function() {},
       onPlay: function() {},
       onEnd: function() {},
-      onTimeUpdate: function() {}
+      onTimeUpdate: function() {},
+      onLoadedMetaData: function() {}
     };
   },
   shouldComponentUpdate(nextProps, nextState) {
@@ -47,7 +49,8 @@ module.exports = React.createClass({
       ended: this.props.onEnd,
       pause: this.props.onPause,
       play: this.props.onPlay,
-      timeupdate: this.props.onTimeUpdate
+      timeupdate: this.props.onTimeUpdate,
+      loadedmetadata: this.props.onLoadedMetaData,
     });
   },
   componentWillUnmount() {
@@ -55,7 +58,8 @@ module.exports = React.createClass({
       ended: this.props.onEnd,
       pause: this.props.onPause,
       play: this.props.onPlay,
-      timeupdate: this.props.onTimeUpdate
+      timeupdate: this.props.onTimeUpdate,
+      loadedmetadata: this.props.onLoadedMetaData,
     });
     this.audioEl = null;
   }
